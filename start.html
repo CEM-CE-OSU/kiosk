@@ -2,71 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style type='text/css'>
-@font-face{font-family:'EksjaExtremesRegular';src:url(Eksja-regular-webfont.eot);src:local('~X?'),url(Eksja-regular-webfont.woff) format('woff'),url(Eksja-regular-webfont.ttf) format('truetype'),url(Eksja-regular-webfont.svg) format('svg');font-weight:normal;font-style:normal;}
-#label {
-	z-index:100;
-	height:110px;
-	width:100%;
-	background-color:#eeeeee;
-	padding-left:116px;
-	padding-top:6px;
-	font-family:"EksjaExtremesRegular","Palatino Linotype", "Book Antiqua", Palatino, serif;
-	position:absolute;
-	top:18px;
-	left:0px;
-	border-top-style:none;
-	border-color:black;
-}
-#coe-label {
-	position:relative;
-	top:-106px;
-	left:120px;
-	font-style:italic;
-	font-size:28px;
-	color:#666666;
-}
-#mime-label {
-	position:relative;
-	top:-110px;
-	left:120px;
-	font-size:34pt;
-	color:#996600
-}
-body{
-	background-color: #000000;
-	color:white;
-	overflow:hidden;
-}
-#canvas {
-    position:fixed;
-    bottom:120px;
-    width:1900px; 
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
 
-}
-#menuItemsArea {
-	width: 1023px;
-	margin-left: auto;
-    margin-right: auto;
-}
-.menuFrame { 
-	font: 12px/1.4em Arial, sans-serif;
-	font-weight:bold;
-}
-
-.left { margin: 20px; float:left; text-align:center;}
-
-#divNav{
-position:absolute; 
-top:990px; 
-}
-#divMenu{
-position:relative; 
-left:908px;
-top:8px;
-visibility:hidden;
-}
-</style>
 <script type="text/javascript">
 var menuItems=new Array();
 var maxColumns=2;
@@ -83,16 +20,16 @@ case "videos":
 	blnSubMenu=true;
 	break;
 default:
-	menuItems[menuItems.length]=new menuItem("CEM Composites", "cem1969.png", "showPage('cemcomp.html', '1080');");
-	menuItems[menuItems.length]=new menuItem("CE Composites", "1954.png", "showPage('cecomp.html', '1080');");
+	menuItems[menuItems.length]=new menuItem("CEM Composites", "MenuItems/cem1969.png", "showPage('StaticHTML/cemcomp.html', '1080');");
+	menuItems[menuItems.length]=new menuItem("CE Composites", 'MenuItems/1954.jpg', "showPage('StaticHTML/cecomp.html', '1080');");
 	//menuItems[menuItems.length]=new menuItem("Campus Map", "map.png", "showPage('http://oregonstate.edu/campusmap/index/embed?zoom=18&centerlat=44.567000&centerlng=-123.275480&layers=1,206', '980');");
-	menuItems[menuItems.length]=new menuItem("Campus Map", "map.png", "showPage('staticMap.PNG', '980');");
-	menuItems[menuItems.length]=new menuItem("CEM Program Formation", "cemearly.png", "showPage('cemearly.html', '1080');");
-	menuItems[menuItems.length]=new menuItem("CEM in the 70's", "70s.png", "showPage('70s.html', '1080');");
-	menuItems[menuItems.length]=new menuItem("CEM in the 80's", "80s.png", "showPage('80s.html', '1080');");
-	menuItems[menuItems.length]=new menuItem("CEM in the 90's", "90s.png", "showPage('90s.html', '1080');");
-	menuItems[menuItems.length]=new menuItem("CEM in the 2000's", "2000s.png", "showPage('2000s.html', '1080');");
-	menuItems[menuItems.length]=new menuItem("CEM Today", "cemtoday.png", "showPage('cemtoday.html', '1080');");
+	menuItems[menuItems.length]=new menuItem("Campus Map", "MenuItems/map.png", "showPage('staticMap.PNG', '980');");
+	menuItems[menuItems.length]=new menuItem("CEM Program Formation", "MenuItems/cemearly.png", "showPage('StaticHTML/cemearly.html', '1080');");
+	menuItems[menuItems.length]=new menuItem("CEM in the 70's", "MenuItems/70s.png", "showPage('StaticHTML/70s.html', '1080');");
+	menuItems[menuItems.length]=new menuItem("CEM in the 80's", "MenuItems/80s.png", "showPage('StaticHTML/80s.html', '1080');");
+	menuItems[menuItems.length]=new menuItem("CEM in the 90's", "MenuItems/90s.png", "showPage('StaticHTML/90s.html', '1080');");
+	menuItems[menuItems.length]=new menuItem("CEM in the 2000's", "MenuItems/2000s.png", "showPage('StaticHTML/2000s.html', '1080');");
+	menuItems[menuItems.length]=new menuItem("CEM Today", "MenuItems/cemtoday.png", "showPage('StaticHTML/cemtoday.html', '1080');");
 	//menuItems[menuItems.length]=new menuItem("Events", "events.png", "showPage('events.html', '1080');");
 }
 function start(){
@@ -166,12 +103,12 @@ function touched(){
 </head>
 
 <body onload="start()" onContextMenu="return false" onselectstart="touched(); return false;">
-<div id='label'><img src='OSU.png' /><div id='coe-label'>College of Engineering</div>
+<div id='label'><img src='MenuItems/OSU.png' /><div id='coe-label'>College of Engineering</div>
 <div id='mime-label'>Civil & Construction Engineering</div></div>
 <iframe id='frmContent' frameborder=0 width='1900' height='1080px' src="" scrolling='no'></iframe>
 <div id="canvas"><div id="menuItemsArea"></div></div>
 <div id='divNav'>
-<div id="divMenu" onMouseDown="showHome();"><img id="imgMenu" src="home.png"  /></div>
+<div id="divMenu" onMouseDown="showHome();"><img id="imgMenu" src="MenuItems/home.png"  /></div>
 </div>
 </body>
 </html>

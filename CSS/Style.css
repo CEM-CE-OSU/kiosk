@@ -1,0 +1,95 @@
+@font-face{font-family:'EksjaExtremesRegular';src:url(Eksja-regular-webfont.eot);src:local('~X?'),url(Eksja-regular-webfont.woff) format('woff'),url(Eksja-regular-webfont.ttf) format('truetype'),url(Eksja-regular-webfont.svg) format('svg');font-weight:normal;font-style:normal;}
+#label {
+	z-index:100;
+	height:110px;
+	width:100%;
+	background-color:#eeeeee;
+	padding-left:116px;
+	padding-top:6px;
+	font-family:"EksjaExtremesRegular","Palatino Linotype", "Book Antiqua", Palatino, serif;
+	position:absolute;
+	top:18px;
+	left:0px;
+	border-top-style:none;
+	border-color:black;
+}
+#coe-label {
+	position:relative;
+	top:-106px;
+	left:120px;
+	font-style:italic;
+	font-size:28px;
+	color:#666666;
+}
+#mime-label {
+	position:relative;
+	top:-110px;
+	left:120px;
+	font-size:34pt;
+	color:#996600
+}
+body{
+	background-color: #000000;
+	color:white;
+	overflow:hidden;
+}
+#canvas {
+    position:fixed;
+    bottom:120px;
+    width:1900px; 
+
+}
+#menuItemsArea {
+	width: 1023px;
+	margin-left: auto;
+    margin-right: auto;
+}
+.menuFrame { 
+	font: 12px/1.4em Arial, sans-serif;
+	font-weight:bold;
+}
+
+.left { 
+	margin: 20px; 
+	float:left; 
+	text-align:center;
+}
+
+#divNav{
+	position:absolute; 
+	top:990px; 
+}
+#divMenu{
+	position:relative; 
+	left:908px;
+	top:8px;
+	visibility:hidden;
+}
+
+body{
+
+}
+
+#divLeftArrow{
+	position:absolute; 
+	left:778px;
+	top:980px;
+	z-index:10;
+}
+#divRightArrow{
+	position:absolute; 
+	left:1014px;
+	top:980px;
+	z-index:10;
+}
+#divInfo{
+	position:absolute; 
+	text-align:center;
+	left:0px;
+	top:910px;
+	width:1920px;
+	height:30px;
+	font-size:30px;
+	color:white;
+}
+
