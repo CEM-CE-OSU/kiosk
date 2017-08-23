@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CEM Today</title>
+<style type='text/css'>
+body{
+
+}
+
+#divLeftArrow{
+position:absolute; 
+left:778px;
+top:980px;
+}
+#divRightArrow{
+position:absolute; 
+left:1014px;
+top:980px;
+}
+#divInfo{
+position:absolute; 
+text-align:center;
+left:0px;
+top:910px;
+width:1920px;
+height:30px;
+font-size:30px;
+color:white;
+}
+
+</style>
+
+<script type="text/javascript">
+<!--
+var buffer=0;
+var position=0;
+var pause=0;
+var myalumni = new Array();
+var arrowDelay=0;
+// Adjust below values as needed.
+var displayTime=10000; //Amount of time each image is displayed (in milliseconds).
+var checkArrows=1000; //Amount of time to check for hiding arrows.
+var pauseMult=10; //If a user uses the scrollwheel, the normal displayTime will be multiplied by this value.
+var zoomIn=1600;
+var zoomOut=980;
+//----------------------------------------------
+function zoom(){
+	document.getElementById("composite").height=zoomIn;
+}
+function preloading(){
+	for (x=0; x<preloading.arguments.length; x++){
+	myalumni[x] = new Image();
+	//alert(preloading.arguments[x][1]);
+	myalumni[x].src = preloading.arguments[x][0];
+	myalumni[x].text=preloading.arguments[x][1];
+	}
+}
+function startShow(){
+	//e=document.getElementById('frmContent').contentDocument.getElementById("composite");
+	e=document.getElementById("composite");
+	info=document.getElementById("divInfo");
+	e.src=myalumni[0].src;
+	info.innerText=myalumni[0].text;
+	setInterval(nextImage,displayTime);
+	setInterval(hideArrows,checkArrows);
+}
+function nextImage(delay){
+	if (delay){
+		pause=pauseMult;
+	} else {
+		if (pause>0){
+			pause=pause-1;
+			return;
+		}
+	}
+	animate(1);
+}
+function prevImage(delay){
+	if (delay){
+		pause=pauseMult;
+	}
+	animate(-1);
+}
+function animate(dir){
+	position=position+dir;
+	if (position<0) position=myalumni.length-1;
+	if (position>myalumni.length-1) position=0;
+	//var frmContent=document.getElementById('frmContent');
+	e=document.getElementById("composite");
+	info=document.getElementById("divInfo");
+	e.src=myalumni[position].src;
+	//alert(myalumni[position].text);
+	info.innerText=myalumni[position].text;
+}
+
+preloading(
+	["today/DSC_4010.jpg", "Scott Ashford addresses the CCE Partners Reception at Kearney Hall, October 29, 2010"],
+	["today/DSC_4082.jpg", "CCE Partners Reception at Kearney Hall, October 29, 2010"],
+	["today/DSC_4094.jpg", "OSU class of 1950 Alum Jason Ashford and Mark Putnam at the CCE Partners Reception in Kearney Hall, October 29, 2010"],
+	["today/DSC_4146.jpg", "At the CCE Partners Reception in 2010"],
+	["today/OSU-50_2242.jpg", "The Faculty Endowment, newly named, Hal Pritchett Chair in Construction Engineering Management, was made possible in 2010"],
+	["today/2010/grad/CE Graduation 2010 076.jpg", "CEM Graduation 2010"],
+	["today/cem-2011-winter_Page_7.jpg", "Jan Strombeck holds a plaque honoring her 27 years of service working in the Construction Engineering Management program, 2011"],
+	["today/cem-2011-spring_Page_5.jpg", "CEM Students Sarah Sullivan and Katy Britsch attended their first NAWIC mentoring mixer in early 2011"],
+	["today/cem-2011-spring_Page_6.jpg", "Jamie Clune assists students mixing concrete and placing it into molds during Winter Wonderings in 2011"],
+	["today/2011/Winter Wonderings/Winter Wonderings 007.JPG", "Winter Wonderings, 2011"],
+	["today/2011/Winter Wonderings/Winter Wonderings 010.JPG", "Winter Wonderings, 2011"],
+	["today/2011/Winter Wonderings/Winter Wonderings 031.JPG", "Winter Wonderings, 2011"],
+	["today/2011/Winter Wonderings/Winter Wonderings 033.JPG", "Winter Wonderings, 2011"],
+	["today/2011/Winter Wonderings/Winter Wonderings 043.JPG", "Winter Wonderings, 2011"],
+	["today/2011/Winter Wonderings/Winter Wonderings 081.JPG", "Winter Wonderings, 2011"],
+	["today/2011/Winter Wonderings/Winter Wonderings 124.JPG", "Winter Wonderings, 2011"],
+	["today/2011/grad/0005_OSUEng_1072.jpg", "CEM Graduation 2011"],
+	["today/2011/grad/0028_OSUEng_1072.jpg", "CEM Graduation 2011"],
+	["today/2011/grad/0033_OSUEng_1072.jpg", "CEM Graduation 2011"],
+	["today/2011/grad/0041_OSUEng_1072.jpg", "CEM Graduation 2011"],
+	["today/2011/grad/0123_OSUEng_1072.jpg", "CEM Graduation 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-37304.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-37315.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-37319.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-37325.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-37327.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-37347.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-37412.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-37414.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-37479.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-73982.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-73988.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-73989.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-73996.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-74003.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-74006.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-74014.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-74023.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-74029.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-74037.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-74039.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-74044.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/2011/AGC Golf Tour/jimcarrollphoto.com-74046.jpg", "A.G.C. Golf Tournament, 2011"],
+	["today/jimcarrollphoto.com-33996.jpg", "Participants in the CEF Golf Tournament, September 9, 2011"],
+	["today/jimcarrollphoto.com-34016.jpg", "Embroidered towel at the Construction Education Foundation Golf Tournament in 2011"],
+	["today/jimcarrollphoto.com-34106.jpg", "CEF Golf Tournament, September 9, 2011"],
+	["today/jimcarrollphoto.com-34120.jpg", "CEF Golf Tournament, September 9, 2011"],
+	["today/jimcarrollphoto.com-34244.jpg", "Bob Phelps chips to the green during the 2011 CEF Golf Tournament"],
+	["today/jimcarrollphoto.com-73988.jpg", "Greg Strombeck, Bob Layton, Bob Phelps and Mike Phelps on the golf course during the AGC Student Chapter Golf Scramble in 2011"],
+	["today/jimcarrollphoto.com-74049.jpg", "Construction Engineering Management golf ball handed out at the AGC Student Chapter Golf Scramble in 2011"],
+	["today/2011/AGC 5k Race/030.JPG", "A.G.C. 5k Race, 2011"],
+	["today/2011/AGC 5k Race/031.JPG", "A.G.C. 5k Race, 2011"],
+	["today/2011/AGC 5k Race/044.JPG", "A.G.C. 5k Race, 2011"],
+	["today/2011/AGC 5k Race/072.JPG", "A.G.C. 5k Race, 2011"],
+	["today/2011/AGC 5k Race/076.JPG", "A.G.C. 5k Race, 2011"],
+	["today/2011/AGC 5k Race/119.JPG", "A.G.C. 5k Race, 2011"],
+	["today/2011/AGC 5k Race/135.JPG", "A.G.C. 5k Race, 2011"],
+	["today/2011/AGC 5k Race/228.JPG", "A.G.C. 5k Race, 2011"],
+	["today/2011/AGC 5k Race/230.JPG", "A.G.C. 5k Race, 2011"],
+	["today/2011/Reno/Commercial Building with Turner.JPG", "Reno Commercial team, 2011"],
+	["today/2011/Reno/Concrete (2).JPG", "Reno Concrete team, 2011"],
+	["today/2011/Reno/Electrical Team.JPG", "Reno Electrical team, 2011"],
+	["today/2011/Reno/Heavy Civil (2).JPG", "Reno Heavy Civil team, 2011"],
+	["today/2011/Reno/IMG_1352.jpg", "Reno, 2011"],
+	["today/2011/Reno/MARINE1P.JPG", "Reno Marine team, 2011"],
+	["today/2011/Reno/Mechanical with Award (2).JPG", "Reno Mechanical team, 2011"],
+	["today/2011/Reno/Multi-Family (2).JPG", "Reno, 2011"],
+	["today/OSU-50_2244.jpg", "CEF Board meeting at the home of Ed Lynch in Cannon Beach, circa 2011"],
+	["today/OSU-50_2246.jpg", "AGC Student Chapter and AGC Oregon-Columbia Chapter annual tailgate event, 2011"],
+	["today/jimcarrollphoto.com-33653.jpg", "Jan Strombeck shares a story with those at her table during the 41st Contractors Night, April 13, 2012"],
+	["today/2012/contractnight/jimcarrollphoto.com-33640.jpg", "Contract Night, 2012"],
+	["today/2012/contractnight/jimcarrollphoto.com-33744.jpg", "Contract Night, 2012"],
+	["today/2012/contractnight/jimcarrollphoto.com-33837.jpg", "Contract Night, 2012"],
+	//["today/2012/contractnight/jimcarrollphoto.com-76666.jpg", "Contract Night, 2012"],
+	["today/2012/contractnight/jimcarrollphoto.com-76671.jpg", "Contract Night, 2012"],
+	["today/2012/contractnight/jimcarrollphoto.com-76674.jpg", "Contract Night, 2012"],
+	//["today/2012/contractnight/jimcarrollphoto.com-76676.jpg", "Contract Night, 2012"],
+	//["today/2012/contractnight/jimcarrollphoto.com-76679.jpg", "Contract Night, 2012"],
+	//["today/2012/contractnight/jimcarrollphoto.com-76685.jpg", "Contract Night, 2012"],
+	//["today/2012/contractnight/jimcarrollphoto.com-76689.jpg", "Contract Night, 2012"],
+	//["today/2012/contractnight/jimcarrollphoto.com-76692.jpg", "Contract Night, 2012"],
+	//["today/2012/contractnight/jimcarrollphoto.com-76705.jpg", "Contract Night, 2012"],
+	["today/2012/contractnight/jimcarrollphoto.com-76725.jpg", "Contract Night, 2012"],
+	["today/2012/contractnight/jimcarrollphoto.com-76733.jpg", "Contract Night, 2012"],
+	["today/jimcarrollphoto.com-36040.jpg", "CEM students brave the foul weather to participate in the golf tournament, May 4, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-35746.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-35848.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-35889.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-35906.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-35968.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-35969.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-36039.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-36122.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-36147.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-36148.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-36164.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-36181.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-36202.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/2012/agcgolf/jimcarrollphoto.com-36213.jpg", "A.G.C. Golf Tournament, 2012"],
+	["today/OSU-50_2243.jpg", "Attendees at The Beavers Builders of America, Awards Banquet at LA live,in 2012"],
+	["today/OSU-50_2245.jpg", "Hal Pritchett with our acting Department Chairman at OSU, and good friend Dr. David Trejo, 2012"],
+	["today/CEM_Stud_Achiev_2015_Page_09.jpg", "CEM Mechanical Team members with their first place trophy from the 2016 ASC Regions 6 & 7 Student Competition in Reno"]
+	
+	
+);
+// -->
+</script> 
+</head>
+<body onload="startShow()" onContextMenu="return false" onselectstart="return false">
+	<div id="divAlum" align='center' style="vertical-align:middle; align='center'; visibility:visible; height:900px; overflow:hidden;">
+		<img id="composite" height='900px' />
+	</div>
+<div id="divLeftArrow"  onMouseDown="prevImage(1);"><img id="imgLeftArrow" height='100px' src="left.png" /></div>
+<div id="divRightArrow" onMouseDown="nextImage(1);"><img id="imgRightArrow" height='100px' src="right.png" /></div>
+	<div id="divInfo">Loading...</div>
+</body>
+</html>
+
+

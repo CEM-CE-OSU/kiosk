@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CEM in the 90's</title>
+<style type='text/css'>
+body{
+
+}
+
+#divLeftArrow{
+position:absolute; 
+left:778px;
+top:980px;
+}
+#divRightArrow{
+position:absolute; 
+left:1014px;
+top:980px;
+}
+#divInfo{
+position:absolute; 
+text-align:center;
+left:0px;
+top:910px;
+width:1920px;
+height:30px;
+font-size:30px;
+color:white;
+}
+
+</style>
+
+<script type="text/javascript">
+<!--
+var buffer=0;
+var position=0;
+var pause=0;
+var myalumni = new Array();
+var arrowDelay=0;
+// Adjust below values as needed.
+var displayTime=10000; //Amount of time each image is displayed (in milliseconds).
+var checkArrows=1000; //Amount of time to check for hiding arrows.
+var pauseMult=10; //If a user uses the scrollwheel, the normal displayTime will be multiplied by this value.
+var zoomIn=1600;
+var zoomOut=980;
+//----------------------------------------------
+function zoom(){
+	document.getElementById("composite").height=zoomIn;
+}
+function preloading(){
+	for (x=0; x<preloading.arguments.length; x++){
+	myalumni[x] = new Image();
+	//alert(preloading.arguments[x][1]);
+	myalumni[x].src = preloading.arguments[x][0];
+	myalumni[x].text=preloading.arguments[x][1];
+	}
+}
+function startShow(){
+	//e=document.getElementById('frmContent').contentDocument.getElementById("composite");
+	e=document.getElementById("composite");
+	info=document.getElementById("divInfo");
+	e.src=myalumni[0].src;
+	info.innerText=myalumni[0].text;
+	setInterval(nextImage,displayTime);
+	setInterval(hideArrows,checkArrows);
+}
+function nextImage(delay){
+	if (delay){
+		pause=pauseMult;
+	} else {
+		if (pause>0){
+			pause=pause-1;
+			return;
+		}
+	}
+	animate(1);
+}
+function prevImage(delay){
+	if (delay){
+		pause=pauseMult;
+	}
+	animate(-1);
+}
+function animate(dir){
+	position=position+dir;
+	if (position<0) position=myalumni.length-1;
+	if (position>myalumni.length-1) position=0;
+	//var frmContent=document.getElementById('frmContent');
+	e=document.getElementById("composite");
+	info=document.getElementById("divInfo");
+	e.src=myalumni[position].src;
+	//alert(myalumni[position].text);
+	info.innerText=myalumni[position].text;
+}
+
+preloading(
+	["90s/OSU-50_2224.jpg", "CEM brochure, 1990s"],
+	["90s/OSU-50_2200.jpg", "Hawaii A.G.C. National Convention, March 1991"],
+	["90s/OSU-50_2202.jpg", "Attendees at A.G.C. National Convention in Maui, Hawaii, March 1991"],
+	["90s/OSU-50_2203.jpg", "Attendees at A.G.C. National Convention, Waikiki Beach in Hawaii, March 1991"],
+	["90s/OSU-50_2204.jpg", "Jan Strombeck at Waikiki Beach, Hawaii, during the A.G.C. National Convention, March 1991"],
+	//["90s/OSU-50_2226.jpg", "Jan Strombeck, Ann and Hal Pritchett at the CEF Invitational Golf Tournament, September 1991"],
+	["90s/OSU-50_2213.jpg", "Coral Sales Scholarship dinner, October 1991"],
+	["90s/OSU-50_2207.jpg", "Annie Tenneson, Jan Strombeck and Nancy Rogge at the retirement party for Bob Phelps, June 1992"],
+	["90s/OSU-50_2191.jpg", "Studying for Construction Management Competition, Reno, Nevada, February 1995"],
+	["90s/OSU-50_2192.jpg", "Studying for Construction Management Competition, Reno, Nevada, February 1995"],
+	["90s/OSU-50_2193.jpg", "Team holding the plaque for third place Hensel Phelps Award in the Construction Management Competition, Reno, Nevada, February 7, 1995"],
+	["90s/OSU-50_2195.jpg", "Construction Management Competition, Reno, Nevada, February 7, 1995"],
+	["90s/OSU-50_2196.jpg", "Construction Management Competition, Reno, Nevada, February 7, 1995"],
+	["90s/OSU-50_2197.jpg", "Construction Management Competition, Reno, Nevada, February 7, 1995"],
+	["90s/OSU-50_2206.jpg", "Jan and Greg Strombeck, Hal and Ann Pritchett, along with students, Stratos Flanders and Kirsten Hoppes at the AGC Convention in 1995"],
+	["90s/OSU-50_2208.jpg", "CEM field trip in 1996"],
+	["90s/OSU-50_2209.jpg", "CEM field trip in 1996"],
+	["90s/OSU-50_2210.jpg", "CEM field trip in 1996"],
+	["90s/OSU-50_2211.jpg", "CEM field trip in 1996"],
+	["90s/OSU-50_2212.jpg", "CEM field trip in 1996"],
+	["90s/OSU-50_2205.jpg", "Coral Sales Scholarship dinner, 1997"],
+	["90s/OSU-50_2214.jpg", "Greg and Jan Strombeck along with Doug Daniels at the Coral Sales Scolarship dinner, in 1997"],
+	["90s/OSU-50_2198.jpg", "Pankow visit, Spring 1998"],
+	["90s/OSU-50_2227.jpg", "Cover of The Oregon Stater, September 4, 1998. Dave Andersen, standing, far right. Hal Pritchett, sitting, in front on left"],
+	["90s/OSU-50_2199.jpg", "Spring 1998 Pankow annual meeting"],
+	["90s/OSU-50_2215.jpg", "Hal Pritchett and OSU graduates, who also worked for Kiewit, 1990s"],
+	["90s/OSU-50_2216.jpg", "Contractors Night, April 1999"],
+	["90s/OSU-50_2217.jpg", "Contractors Night, April 1999"],
+	["90s/OSU-50_2219.jpg", "Contractors Night, April 1999"],
+	["90s/OSU-50_2220.jpg", "Contractors Night, April 1999"],
+	["90s/OSU-50_2221.jpg", "Contractors Night, April 1999"],
+	["90s/OSU-50_2223.jpg", "Contractors Night, April 1999"],
+	["90s/OSU-50_2228.jpg", ""]
+	
+	
+);
+// -->
+</script> 
+</head>
+<body onload="startShow()" onContextMenu="return false" onselectstart="return false">
+	<div id="divAlum" align='center' style="vertical-align:middle; align='center'; visibility:visible; height:900px; overflow:hidden;">
+		<img id="composite" height='900px' />
+	</div>
+<div id="divLeftArrow"  onMouseDown="prevImage(1);"><img id="imgLeftArrow" height='100px' src="left.png" /></div>
+<div id="divRightArrow" onMouseDown="nextImage(1);"><img id="imgRightArrow" height='100px' src="right.png" /></div>
+	<div id="divInfo">Loading...</div>
+</body>
+</html>
+
+

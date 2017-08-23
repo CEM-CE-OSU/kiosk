@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type='text/css'>
+body{
+	background-color: #000000;
+	overflow:hidden;
+}
+#divNav{
+position:absolute; 
+top:990px; 
+}
+#divMenu{
+position:absolute; 
+left:840px;
+visibility:hidden;
+}
+#divMenuItems{
+position:absolute; 
+top:240px; 
+left:794px;
+font-size:18pt;
+font-family: Verdana;
+font-weight: bold;
+}
+.divSub{
+border: 5px outset #F5ECCE;
+width: 450px;
+height: 30px;
+margin: 5px;
+padding:10px;
+background-color: #FE9A2E;
+text-align: center;
+}	
+</style>
+<script type="text/javascript">
+function showMenu(){
+ //document.getElementById('divMenu').style.visibility='visible';
+}
+function showMenuItems(){
+	document.getElementById('frmContent').src="";
+	document.getElementById('frmContent').style.visibility='hidden';
+	document.getElementById('divMenuItems').style.visibility='visible';
+	document.getElementById('divMenu').style.visibility='hidden';
+}
+function showPage(strURL, strHeight){
+	document.getElementById('divMenuItems').style.visibility='hidden';
+	document.getElementById('frmContent').src="";
+	document.getElementById('frmContent').style.visibility='visible';
+	document.getElementById('frmContent').height=strHeight;
+	document.getElementById('divMenu').style.visibility='visible';
+	document.getElementById('frmContent').src=strURL;
+
+}
+
+function start(){
+//<div onMouseDown="showPage('directory.pdf#viewrect=0,7900,1000,2200&scrollbar=0&messages=0&toolbar=0&navpanes=0', '980');"><img src='directory.png' /></div>
+}
+</script>
+
+</head>
+<body onload="" onContextMenu="return false" onselectstart="return false">
+<iframe id='frmContent' frameborder=0 width='1900' height='1080px' src="" scrolling='no'></iframe>
+<div id="divMenuItems" >
+	<div onMouseDown="showPage('alum.html', '1080');"><img src='alumni.png' /></div>
+	<div onMouseDown="showPage('awards.html', '1080');"><img src='awards.png' /></div>
+	<div onMouseDown="showPage('http://oregonstate.edu/campusmap/index/embed?zoom=18&centerlat=44.567000&centerlng=-123.275480&layers=1,206', '980');"><img src='map
+	.png' /></div>
+	<div onMouseDown="showPage('directory.pdf#view=Fit&scrollbar=0&messages=0&toolbar=0&navpanes=0&statusbar=0', '980');"><img src='directory.png' /></div>
+	<div onMouseDown="showPage('OSawards.html', '1080');"><img src='OSawards.png' /></div>
+	<div onMouseDown="showPage('relentless.html', '980');"><img src='relentless.png' /></div>
+	<div onMouseDown="showPage('robotics.html', '980');"><img src='robotics.png' /></div>
+	
+	
+
+</div>
+<div id='divNav'>
+<div id="divMenu" onMouseDown="showMenuItems();"><img id="imgMenu" src="menu.png" height='100px' /></div>
+
+</div>
+</body>
+</html>
+
+

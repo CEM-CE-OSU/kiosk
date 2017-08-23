@@ -1,0 +1,4 @@
+#LayoutIgnoreURI *
+order deny,allow
+deny from all
+allow from 128.193

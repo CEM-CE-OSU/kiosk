@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type='text/css'>
+body{
+}
+
+#divLeftArrow{
+position:absolute; 
+left:778px;
+top:980px;
+}
+#divRightArrow{
+position:absolute; 
+left:1014px;
+top:980px;
+}
+
+</style>
+
+<script type="text/javascript">
+<!--
+var buffer=0;
+var position=0;
+var pause=0;
+var myimages = new Array();
+var arrowDelay=0;
+// Adjust below values as needed.
+var displayTime=10000; //Amount of time each image is displayed (in milliseconds).
+var checkArrows=1000; //Amount of time to check for hiding arrows.
+var pauseMult=10; //If a user uses the scrollwheel, the normal displayTime will be multiplied by this value.
+//----------------------------------------------
+function preloading(){
+	for (x=0; x<preloading.arguments.length; x++){
+	myimages[x] = new Image();
+	myimages[x].src = preloading.arguments[x];
+	}
+}
+function startShow(){
+	e=document.getElementById("composite");
+	e.src=myimages[0].src;
+	setInterval(nextImage,displayTime);
+	//setInterval(hideArrows,checkArrows);
+}
+function nextImage(delay){
+	if (delay){
+		pause=pauseMult;
+	} else {
+		if (pause>0){
+			pause=pause-1;
+			return;
+		}
+	}
+	animate(1);
+}
+function prevImage(delay){
+	if (delay){
+		pause=pauseMult;
+	}
+	animate(-1);
+}
+function animate(dir){
+	position=position+dir;
+	if (position<0) position=myimages.length-1;
+	if (position>myimages.length-1) position=0;
+	//var frmContent=document.getElementById('frmContent');
+	e=document.getElementById("composite");
+	e.src=myimages[position].src;
+}
+
+
+// -->
+</script> 
+<script src="oregon-stater/preloading.js"></script>
+</head>
+<body onload="startShow()" onContextMenu="return false" onselectstart="return false">
+	<div id="divAlum" align='center' style="vertical-align:middle; align='center'; visibility:visible;">
+		<img id="composite" height='970px'  />
+	</div>
+<div id="divLeftArrow"  onMouseDown="prevImage(1);"><img id="imgLeftArrow" height='100px' src="left.png" /></div>
+<div id="divRightArrow" onMouseDown="nextImage(1);"><img id="imgRightArrow" height='100px' src="right.png" /></div>
+</body>
+</html>
+
+

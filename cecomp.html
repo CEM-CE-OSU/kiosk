@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CE Composites</title>
+<style type='text/css'>
+body{
+
+}
+
+#divLeftArrow{
+position:absolute; 
+left:778px;
+top:980px;
+}
+#divRightArrow{
+position:absolute; 
+left:1014px;
+top:980px;
+}
+
+</style>
+
+<script type="text/javascript">
+<!--
+var buffer=0;
+var position=0;
+var pause=0;
+var myalumni = new Array();
+var arrowDelay=0;
+// Adjust below values as needed.
+var displayTime=10000; //Amount of time each image is displayed (in milliseconds).
+var checkArrows=1000; //Amount of time to check for hiding arrows.
+var pauseMult=10; //If a user uses the scrollwheel, the normal displayTime will be multiplied by this value.
+var zoomIn=1600;
+var zoomOut=980;
+//----------------------------------------------
+function zoom(){
+	document.getElementById("composite").height=zoomIn;
+}
+
+//preloads all of the Images in the list of Images to be displayed.
+function preloading(){
+	for (x=0; x<preloading.arguments.length; x++){
+		myalumni[x] = new Image();
+		myalumni[x].src = preloading.arguments[x];
+	}
+}
+//
+function startShow(){
+	e=document.getElementById("composite");
+	e.src=myalumni[0].src;
+	setInterval(nextImage,displayTime);
+	setInterval(hideArrows,checkArrows);
+}
+function nextImage(delay){
+	if (delay){
+		pause=pauseMult;
+	} else {
+		if (pause>0){
+			pause=pause-1;
+			return;
+		}
+	}
+	animate(1);
+}
+function prevImage(delay){
+	if (delay){
+		pause=pauseMult;
+	}
+	animate(-1);
+}
+function animate(dir){
+	position=position+dir;
+	if (position<0) position=myalumni.length-1;
+	if (position>myalumni.length-1) position=0;
+	//var frmContent=document.getElementById('frmContent');
+	e=document.getElementById("composite");
+	e.src=myalumni[position].src;
+}
+
+preloading(
+	"ce_composites/CCE Composite, 1954, Civil.jpg",
+	"ce_composites/CCE Composite, 1955, Civil.jpg",
+	"ce_composites/CCE Composite, 1956, Civil.jpg",
+	"ce_composites/CCE Composite, 1957, Civil.jpg",
+	"ce_composites/CCE Composite, 1958, Civil.jpg",
+	"ce_composites/CCE Composite, 1959, Civil.jpg",
+	"ce_composites/CCE Composite, 1960, Civil.jpg",
+	"ce_composites/CCE Composite, 1961, Civil.jpg",
+	"ce_composites/CCE Composite, 1962, Civil.jpg",
+	"ce_composites/CCE Composite, 1963, Civil.jpg",
+	"ce_composites/CCE Composite, 1964, Civil.jpg",
+	"ce_composites/CCE Composite, 1965, Civil.jpg",
+	"ce_composites/CCE Composite, 1966, Civil.jpg",
+	"ce_composites/CCE Composite, 1967, Civil.jpg",
+	"ce_composites/CCE Composite, 1968, Civil.jpg",
+	"ce_composites/CCE Composite, 1969, Civil.jpg",
+	"ce_composites/CCE Composite, 1970, Civil.jpg",
+	"ce_composites/CCE Composite, 1971, Civil.jpg",
+	"ce_composites/CCE Composite, 1972, Civil.jpg",
+	"ce_composites/CCE Composite, 1973, Civil.jpg",
+	"ce_composites/CCE Composite, 1974, Civil.jpg",
+	"ce_composites/CCE Composite, 1975, Civil.jpg",
+	"ce_composites/CCE Composite, 1976, Civil.jpg",
+	"ce_composites/CCE Composite, 1977, Civil.jpg",
+	"ce_composites/CCE Composite, 1978, Civil.jpg",
+	"ce_composites/CCE Composite, 1979, Civil.jpg",
+	"ce_composites/CCE Composite, 1980, Civil.jpg",
+	"ce_composites/CCE Composite, 1981, Civil.jpg",
+	"ce_composites/CCE Composite, 1982, Civil.jpg",
+	"ce_composites/CCE Composite, 1983, Civil.jpg",
+	"ce_composites/CCE Composite, 1984, Civil.jpg",
+	"ce_composites/CCE Composite, 1985, Civil.jpg",
+	"ce_composites/CCE Composite, 1986, Civil.jpg",
+	"ce_composites/CCE Composite, 1987, Civil.jpg",
+	"ce_composites/CCE Composite, 1988, Civil.jpg",
+	"ce_composites/CCE Composite, 1989, Civil.jpg",
+	"ce_composites/CCE Composite, 1990, Civil.jpg",
+	"ce_composites/CCE Composite, 1991, Civil.jpg",
+	"ce_composites/CCE Composite, 1992, Civil.jpg",
+	"ce_composites/CCE Composite, 1993, Civil.jpg",
+	"ce_composites/CCE Composite, 1994, Civil.jpg",
+	"ce_composites/CCE Composite, 1995, Civil.jpg",
+	"ce_composites/CCE Composite, 1996, Civil.jpg",
+	"ce_composites/CCE Composite, 1997, Civil.jpg",
+	"ce_composites/CCE Composite, 1998, Civil.jpg",
+	"ce_composites/CCE Composite, 1999, Civil.jpg",
+	"ce_composites/CCE Composite, 2000, Civil.jpg",
+	"ce_composites/CCE Composite, 2001, Civil.jpg",
+	"ce_composites/CCE Composite, 2002, Civil.jpg",
+	"ce_composites/CCE Composite, 2003, Civil.jpg",
+	"ce_composites/CCE Composite, 2004, Civil.jpg",
+	"ce_composites/CCE Composite, 2005, Civil.jpg",
+	"ce_composites/CCE Composite, 2006, Civil.jpg",
+	"ce_composites/CCE Composite, 2007, Civil.jpg",
+	"ce_composites/CCE Composite, 2008, Civil.jpg",
+	"ce_composites/CCE Composite, 2009, Civil.jpg",
+	"ce_composites/CCE Composite, 2010, Civil.jpg",
+	"ce_composites/CCE Composite, 2011, Civil.jpg",
+	"ce_composites/CCE Composite, 2012, Civil.jpg",
+	"ce_composites/CCE Composite, 2013, Civil.jpg",
+	"ce_composites/CCE Composite, 2014, Civil.jpg",
+	"ce_composites/CCE Composite, 2015, Civil.jpg",
+	"ce_composites/CCE Composite, 2016, Civil.jpg",
+	"ce_composites/CCE Composite, 2017, Civil.jpg
+);
+// -->
+</script> 
+</head>
+<body onload="startShow()" onContextMenu="return false" onselectstart="return false">
+	<div id="divAlum" align='center' style="vertical-align:middle; align='center'; visibility:visible; height:970px; overflow:hidden;">
+		<img id="composite" height='970px' />
+	</div>
+<div id="divLeftArrow"  onMouseDown="prevImage(1);"><img id="imgLeftArrow" height='100px' src="left.png" /></div>
+<div id="divRightArrow" onMouseDown="nextImage(1);"><img id="imgRightArrow" height='100px' src="right.png" /></div>
+</body>
+</html>
+
+

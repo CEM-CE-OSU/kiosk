@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CEM Early Years</title>
+<style type='text/css'>
+body{
+
+}
+
+#divLeftArrow{
+position:absolute; 
+left:778px;
+top:980px;
+}
+#divRightArrow{
+position:absolute; 
+left:1014px;
+top:980px;
+}
+#divInfo{
+position:absolute; 
+text-align:center;
+left:0px;
+top:910px;
+width:1920px;
+height:30px;
+font-size:30px;
+color:white;
+}
+
+</style>
+
+<script type="text/javascript">
+<!--
+var buffer=0;
+var position=0;
+var pause=0;
+var myalumni = new Array();
+var arrowDelay=0;
+// Adjust below values as needed.
+var displayTime=10000; //Amount of time each image is displayed (in milliseconds).
+var checkArrows=1000; //Amount of time to check for hiding arrows.
+var pauseMult=10; //If a user uses the scrollwheel, the normal displayTime will be multiplied by this value.
+var zoomIn=1600;
+var zoomOut=980;
+//----------------------------------------------
+function zoom(){
+	document.getElementById("composite").height=zoomIn;
+}
+function preloading(){
+	for (x=0; x<preloading.arguments.length; x++){
+	myalumni[x] = new Image();
+	//alert(preloading.arguments[x][1]);
+	myalumni[x].src = preloading.arguments[x][0];
+	myalumni[x].text=preloading.arguments[x][1];
+	}
+}
+function startShow(){
+	//e=document.getElementById('frmContent').contentDocument.getElementById("composite");
+	e=document.getElementById("composite");
+	info=document.getElementById("divInfo");
+	e.src=myalumni[0].src;
+	info.innerText=myalumni[0].text;
+	setInterval(nextImage,displayTime);
+	setInterval(hideArrows,checkArrows);
+}
+function nextImage(delay){
+	if (delay){
+		pause=pauseMult;
+	} else {
+		if (pause>0){
+			pause=pause-1;
+			return;
+		}
+	}
+	animate(1);
+}
+function prevImage(delay){
+	if (delay){
+		pause=pauseMult;
+	}
+	animate(-1);
+}
+function animate(dir){
+	position=position+dir;
+	if (position<0) position=myalumni.length-1;
+	if (position>myalumni.length-1) position=0;
+	//var frmContent=document.getElementById('frmContent');
+	e=document.getElementById("composite");
+	info=document.getElementById("divInfo");
+	e.src=myalumni[position].src;
+	//alert(myalumni[position].text);
+	info.innerText=myalumni[position].text;
+}
+
+preloading(
+	["early_years/OSU-50_2001.jpg", "1966"],
+	["early_years/OSU-50_2002.jpg", "1966"],
+	["early_years/OSU-50_2003.jpg", "1966"],
+	["early_years/OSU-50_2004.jpg", "1966"],
+	["early_years/OSU-50_2005.jpg", "1966"],
+	["early_years/OSU-50_2006.jpg", "1966"],
+	["early_years/OSU-50_2007.jpg", "1966"],
+	["early_years/OSU-50_2008.jpg", "1966"],
+	["early_years/OSU-50_2009.jpg", "1966"],
+	["early_years/OSU-50_2010.jpg", "1966"],
+	["early_years/OSU-50_2011.jpg", "1966"],
+	["early_years/OSU-50_2012.jpg", "1966"],
+	["early_years/OSU-50_2013.jpg", "1966"],
+	["early_years/OSU-50_2014.jpg", "1966"],
+	["early_years/OSU-50_2015.jpg", "1966"],
+	["early_years/OSU-50_2016.jpg", "1966"],
+	["early_years/OSU-50_2024.jpg", "The 1967-68 catalog with the first listing for CET courses"],
+	["early_years/OSU-50_2017.jpg", "First listing for CET courses in the 1967-68 catalog"],
+	["early_years/OSU-50_2018.jpg", "First listing for CET courses in the 1967-68 catalog"],
+	["early_years/OSU-50_2019.jpg", "Harold D. Pritchett, Assistant Professor of Civil Engineering, 1967"],
+	["early_years/OSU-50_2020.jpg", "George B. LaBaun, Assistant Professor of Production Technology, 1967"],
+	["early_years/OSU-50_2021.jpg", "Robert T. Phelps, 1968"],
+	["early_years/OSU-50_T_2023.jpg", "Robert Phelps joins OSU faculty, 1968"],
+	["early_years/OSU-50_2066.jpg", "Bill Peckham"],
+	["early_years/OSU-50_2062.jpg", "First A.G.C Student Chapter in America"],
+	["early_years/OSU-50_2178.jpg", "Oregon State's A.G.C Student Chapter receives their charter during the 1969-70 academic year. A.G.C of American President, Ray Rogers, presents the documents to Tom Mossman, Student Chapter President."],
+	["early_years/OSU-50_2180.jpg", "A.G.C. Student Chapter looking at first class composite photo in 1969"]
+	
+	
+);
+// -->
+</script> 
+</head>
+<body onload="startShow()" onContextMenu="return false" onselectstart="return false">
+	<div id="divAlum" align='center' style="vertical-align:middle; align='center'; visibility:visible; height:900px; overflow:hidden;">
+		<img id="composite" height='900px' />
+	</div>
+<div id="divLeftArrow"  onMouseDown="prevImage(1);"><img id="imgLeftArrow" height='100px' src="left.png" /></div>
+<div id="divRightArrow" onMouseDown="nextImage(1);"><img id="imgRightArrow" height='100px' src="right.png" /></div>
+	<div id="divInfo">Loading...</div>
+</body>
+</html>
+
+
