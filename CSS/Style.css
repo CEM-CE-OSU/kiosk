@@ -58,29 +58,28 @@ body{
 #divNav{
 	position:absolute; 
 	top:990px; 
+	width: 50px;
+	z-index: 1;
 }
 #divMenu{
 	position:relative; 
 	left:908px;
 	top:8px;
-	visibility:hidden;
+	z-index: 1;
 }
 
-body{
-
-}
 
 #divLeftArrow{
-	position:absolute; 
+	position: Absolute; 
 	left:778px;
-	top:980px;
-	z-index:10;
+	top:990px;
+	z-index: 1000;
 }
 #divRightArrow{
-	position:absolute; 
+	position:Absolute; 
 	left:1014px;
-	top:980px;
-	z-index:10;
+	top:990px;
+	z-index: 1000;
 }
 #divInfo{
 	position:absolute; 
@@ -92,4 +91,14 @@ body{
 	font-size:30px;
 	color:white;
 }
+
+.hidden{
+	visibility: hidden;
+}
+
+iframe {
+	z-index: 100;
+}
+
+
 

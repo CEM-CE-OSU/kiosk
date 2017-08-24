@@ -1,124 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+<script type="text/javascript" src="../Javascript/slideShow.js"></script>
+<script type="text/javascript" src="../Javascript/preloading2000s.js"></script>
 <title>CEM in the 2000's</title>
-<style type='text/css'>
-body{
-
-}
-
-#divLeftArrow{
-position:absolute; 
-left:778px;
-top:980px;
-}
-#divRightArrow{
-position:absolute; 
-left:1014px;
-top:980px;
-}
-#divInfo{
-position:absolute; 
-text-align:center;
-left:0px;
-top:910px;
-width:1920px;
-height:30px;
-font-size:30px;
-color:white;
-}
-
-</style>
-
-<script type="text/javascript">
-<!--
-var buffer=0;
-var position=0;
-var pause=0;
-var myalumni = new Array();
-var arrowDelay=0;
-// Adjust below values as needed.
-var displayTime=10000; //Amount of time each image is displayed (in milliseconds).
-var checkArrows=1000; //Amount of time to check for hiding arrows.
-var pauseMult=10; //If a user uses the scrollwheel, the normal displayTime will be multiplied by this value.
-var zoomIn=1600;
-var zoomOut=980;
-//----------------------------------------------
-function zoom(){
-	document.getElementById("composite").height=zoomIn;
-}
-function preloading(){
-	for (x=0; x<preloading.arguments.length; x++){
-	myalumni[x] = new Image();
-	//alert(preloading.arguments[x][1]);
-	myalumni[x].src = preloading.arguments[x][0];
-	myalumni[x].text=preloading.arguments[x][1];
-	}
-}
-function startShow(){
-	//e=document.getElementById('frmContent').contentDocument.getElementById("composite");
-	e=document.getElementById("composite");
-	info=document.getElementById("divInfo");
-	e.src=myalumni[0].src;
-	info.innerText=myalumni[0].text;
-	setInterval(nextImage,displayTime);
-	setInterval(hideArrows,checkArrows);
-}
-function nextImage(delay){
-	if (delay){
-		pause=pauseMult;
-	} else {
-		if (pause>0){
-			pause=pause-1;
-			return;
-		}
-	}
-	animate(1);
-}
-function prevImage(delay){
-	if (delay){
-		pause=pauseMult;
-	}
-	animate(-1);
-}
-function animate(dir){
-	position=position+dir;
-	if (position<0) position=myalumni.length-1;
-	if (position>myalumni.length-1) position=0;
-	//var frmContent=document.getElementById('frmContent');
-	e=document.getElementById("composite");
-	info=document.getElementById("divInfo");
-	e.src=myalumni[position].src;
-	//alert(myalumni[position].text);
-	info.innerText=myalumni[position].text;
-}
-
-preloading(
-	["2000s/OSU-50_2229.jpg", "News article from July 2001 announcing Robert Wilson's gift of land to create an innovative program in OSU's engineering and business colleges"],
-	["2000s/OSU-50_2231.jpg", "Coral Sales Scholarship dinner, 2002"],
-	["2000s/OSU-50_2232.jpg", "Morse Brothers donation to OSU Construction Engineering early 2000s"],
-	["2000s/OSU-50_2233.jpg", "Greg and Jan Strombeck, Pam Culbertson and Hal Pritchett visit the NASCAR Race Track while in Las Vegas during the A.G.C. Convention in 2000"],
-	["2000s/OSU-50_2234.jpg", "Some of the attendees to the A.G.C. Convention in Las Vegas, 2000"],
-	["2000s/OSU-50_2235.jpg", "Senior field trip to San Francisco in 2000"],
-	["2000s/OSU-50_2236.jpg", "Senior field trip to San Francisco in 2000"],
-	["2000s/OSU-50_2237.jpg", "Dave Rogge, Matt McDongall and Hal Pritchett at Lefty O' Doul's Restaurants during the San Francisco field trip in the early 2000s"],
-	["2000s/OSU-50_2238.jpg", "The Gap's new corporate headquarters work site during the Senior Field Trip in San Francisco, 2000"],
-	["2000s/OSU-50_2239.jpg", "Hal Pritchett, Jan and Greg Strombeck at work site of The Gap corporate headquarters on the bay in San Francisco, 2000"],
-	["2000s/OSU-50_2225.jpg", "Andersen Construction company work site. Newport Oregon (later NOAA) Port of Newport office building under construction, 2009-2011"],
-	["2000s/OSU-50_2230.jpg", "Wooden momento from Apperson Building structure handed out to people who attended the Kearney Hall dedication in January of 2009"]
-	
-	
-);
-// -->
-</script> 
 </head>
 <body onload="startShow()" onContextMenu="return false" onselectstart="return false">
 	<div id="divAlum" align='center' style="vertical-align:middle; align='center'; visibility:visible; height:900px; overflow:hidden;">
 		<img id="composite" height='900px' />
 	</div>
-<div id="divLeftArrow"  onMouseDown="prevImage(1);"><img id="imgLeftArrow" height='100px' src="left.png" /></div>
-<div id="divRightArrow" onMouseDown="nextImage(1);"><img id="imgRightArrow" height='100px' src="right.png" /></div>
+<div id="divLeftArrow"  onMouseDown="prevImage(1);"><img id="imgLeftArrow" height='100px' src="../menuItems/left.png" /></div>
+<div id="divRightArrow" onMouseDown="nextImage(1);"><img id="imgRightArrow" height='100px' src="../menuItems/right.png" /></div>
 	<div id="divInfo">Loading...</div>
 </body>
 </html>

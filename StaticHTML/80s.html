@@ -1,140 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+<script type="text/javascript" src="../Javascript/slideShow.js"></script>
+<script type="text/javascript" src="../Javascript/preloading80s.js"></script>
 <title>CEM in the 80's</title>
-<style type='text/css'>
-body{
-
-}
-
-#divLeftArrow{
-position:absolute; 
-left:778px;
-top:980px;
-}
-#divRightArrow{
-position:absolute; 
-left:1014px;
-top:980px;
-}
-#divInfo{
-position:absolute; 
-text-align:center;
-left:0px;
-top:910px;
-width:1920px;
-height:30px;
-font-size:30px;
-color:white;
-}
-
-</style>
 
 <script type="text/javascript">
-<!--
-var buffer=0;
-var position=0;
-var pause=0;
-var myalumni = new Array();
-var arrowDelay=0;
-// Adjust below values as needed.
-var displayTime=10000; //Amount of time each image is displayed (in milliseconds).
-var checkArrows=1000; //Amount of time to check for hiding arrows.
-var pauseMult=10; //If a user uses the scrollwheel, the normal displayTime will be multiplied by this value.
-var zoomIn=1600;
-var zoomOut=980;
-//----------------------------------------------
-function zoom(){
-	document.getElementById("composite").height=zoomIn;
-}
-function preloading(){
-	for (x=0; x<preloading.arguments.length; x++){
-	myalumni[x] = new Image();
-	//alert(preloading.arguments[x][1]);
-	myalumni[x].src = preloading.arguments[x][0];
-	myalumni[x].text=preloading.arguments[x][1];
-	}
-}
-function startShow(){
-	//e=document.getElementById('frmContent').contentDocument.getElementById("composite");
-	e=document.getElementById("composite");
-	info=document.getElementById("divInfo");
-	e.src=myalumni[0].src;
-	info.innerText=myalumni[0].text;
-	setInterval(nextImage,displayTime);
-	setInterval(hideArrows,checkArrows);
-}
-function nextImage(delay){
-	if (delay){
-		pause=pauseMult;
-	} else {
-		if (pause>0){
-			pause=pause-1;
-			return;
-		}
-	}
-	animate(1);
-}
-function prevImage(delay){
-	if (delay){
-		pause=pauseMult;
-	}
-	animate(-1);
-}
-function animate(dir){
-	position=position+dir;
-	if (position<0) position=myalumni.length-1;
-	if (position>myalumni.length-1) position=0;
-	//var frmContent=document.getElementById('frmContent');
-	e=document.getElementById("composite");
-	info=document.getElementById("divInfo");
-	e.src=myalumni[position].src;
-	//alert(myalumni[position].text);
-	info.innerText=myalumni[position].text;
-}
-
-preloading(
-	["80s/OSU-50_2022.jpg", "Harold D. Pritchett, Assistant Professor of Civil Engineering and Jan Strombeck."],
-	["80s/OSU-50_2055.jpg", "CEF newsletter, January 1986"],
-	["80s/OSU-50_2071.jpg", "Attendees to Contractors' Night at Corvallis Country Club, April 1989"],
-	["80s/OSU-50_2072.jpg", "Greg and Jan Strombeck, along with Judi Niebuhr CEM/BUS, left, at Coral Sales Scholarship Award Dinner, October 1989  "],
-	["80s/OSU-50_2073.jpg", "Jan Strombeck and Ann Pritchett, at ladies luncheon at the A.G.C. Convention in New Orleans, March 1988"],
-	["80s/OSU-50_2074.jpg", "Ladies luncheon at the AGC National Convention in Atlanta, Georgia, March 24, 1989"],
-	["80s/OSU-50_2075.jpg", "Shell (sp) MacPherson CEM 1988 and Jan Strombeck at the A.G.C. National Convention, March 1988"],
-	["80s/OSU-50_2076.jpg", "Jan Strombeck"],
-	["80s/OSU-50_2077.jpg", "Contractor's Night attendees, 1980"],
-	["80s/OSU-50_2078.jpg", "Dick Burnham, far right, one of the attendees Contractor's Night, 1980"],
-	["80s/OSU-50_2079.jpg", "Melinda Rickson and Burr Boutwell at Contractor's Night, 1980"],
-	["80s/OSU-50_2080.jpg", "Don Thompson, student at Contractor's Night 1980"],
-	//["80s/OSU-50_2081.jpg", "Contractor's Night, 1980"],
-	["80s/OSU-50_2082.jpg", "Construction Management students on a field trip in the early 1980s"],
-	["80s/OSU-50_2083.jpg", "Construction Engineering field trip, early 1980s"],
-	["80s/OSU-50_2085.jpg", "Construction Engineering field trip, early 1980s"],
-	["80s/OSU-50_2086.jpg", "Construction Engineering field trip, early 1980s"],
-	["80s/OSU-50_2087.jpg", "Construction Engineering field trip, early 1980s"],
-	["80s/OSU-50_2088.jpg", "Construction Engineering field trip, early 1980s"],
-	["80s/OSU-50_2089.jpg", "Construction Engineering field trip, early 1980s"],
-	["80s/OSU-50_2091.jpg", "Flyer for the Cartwright, one of CEM field trip hotels in the 1980s"],
-	["80s/OSU-50_2092.jpg", "Flyer for the Cartwright, one of CEM field trip hotels in the 1980s"],
-	["80s/OSU-50_2102.jpg", "Bob Phelps, 1980s"],
-	["80s/OSU-50_T_2026.jpg", "Bob Phelps receives OSU Teaching Award, 1985"],
-	["80s/OSU-50_2124.jpg", "Ralph Miller, OSU Basketball Coach, speaking at CEF"],
-	["80s/OSU-50_2125.jpg", "Harry Teel, Edward C. Lynch, Ralph Miller and Jim Piorot at a CEF dinner"],
-	["80s/OSU-50_2128.jpg", "Ralph Miller, OSU Baksetball Coach"],
-	["80s/OSU-50_2137.jpg", "CEF Board at Hal Pritchett's home on Terra Circle, east of Corvallis, early 1980s"]
-	
-	
-);
-// -->
 </script> 
 </head>
 <body onload="startShow()" onContextMenu="return false" onselectstart="return false">
 	<div id="divAlum" align='center' style="vertical-align:middle; align='center'; visibility:visible; height:900; overflow:hidden;">
 		<img id="composite" height='900px' />
 	</div>
-<div id="divLeftArrow"  onMouseDown="prevImage(1);"><img id="imgLeftArrow" height='100px' src="left.png" /></div>
-<div id="divRightArrow" onMouseDown="nextImage(1);"><img id="imgRightArrow" height='100px' src="right.png" /></div>
+<div id="divLeftArrow"  onMouseDown="prevImage(1);"><img id="imgLeftArrow" height='100px' src="../menuItems/left.png" /></div>
+<div id="divRightArrow" onMouseDown="nextImage(1);"><img id="imgRightArrow" height='100px' src="../menuItems/right.png" /></div>
 	<div id="divInfo">Loading...</div>
 </body>
 </html>
