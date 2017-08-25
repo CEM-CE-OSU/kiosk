@@ -38,7 +38,9 @@ function animate(dir){
 	info=document.getElementById("divInfo");
 	e.src=myalumni[position].src;
 	//alert(myalumni[position].text);
-	info.innerText=myalumni[position].text;
+	if(myalumni[position].text){
+		info.innerText=myalumni[position].text;
+	}
 }
 
 
@@ -57,7 +59,7 @@ function startShow(){
 	e=document.getElementById("composite");
 	info=document.getElementById("divInfo");
 	e.src=myalumni[0].src;
-	if(myalumni[0].text != null){
+	if(myalumni[0].text){
 		info.innerText=myalumni[0].text;
 	}
 	setInterval(nextImage, displayTime);

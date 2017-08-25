@@ -1,0 +1,31 @@
+preloading(
+	["../early_years/OSU-50_2001.jpg", "1966"],
+	["../early_years/OSU-50_2002.jpg", "1966"],
+	["../early_years/OSU-50_2003.jpg", "1966"],
+	["../early_years/OSU-50_2004.jpg", "1966"],
+	["../early_years/OSU-50_2005.jpg", "1966"],
+	["../early_years/OSU-50_2006.jpg", "1966"],
+	["../early_years/OSU-50_2007.jpg", "1966"],
+	["../early_years/OSU-50_2008.jpg", "1966"],
+	["../early_years/OSU-50_2009.jpg", "1966"],
+	//["../early_years/OSU-50_2010.jpg", "1966"],
+	//["../early_years/OSU-50_2011.jpg", "1966"],
+	["../early_years/OSU-50_2012.jpg", "1966"],
+	["../early_years/OSU-50_2013.jpg", "1966"],
+	["../early_years/OSU-50_2014.jpg", "1966"],
+	["../early_years/OSU-50_2015.jpg", "1966"],
+	["../early_years/OSU-50_2016.jpg", "1966"],
+	["../early_years/OSU-50_2024.jpg", "The 1967-68 catalog with the first listing for CET courses"],
+	["../early_years/OSU-50_2017.jpg", "First listing for CET courses in the 1967-68 catalog"],
+	["../early_years/OSU-50_2018.jpg", "First listing for CET courses in the 1967-68 catalog"],
+	["../early_years/OSU-50_2019.jpg", "Harold D. Pritchett, Assistant Professor of Civil Engineering, 1967"],
+	["../early_years/OSU-50_2020.jpg", "George B. LaBaun, Assistant Professor of Production Technology, 1967"],
+	["../early_years/OSU-50_2021.jpg", "Robert T. Phelps, 1968"],
+	["../early_years/OSU-50_T_2023.jpg", "Robert Phelps joins OSU faculty, 1968"],
+	["../early_years/OSU-50_2066.jpg", "Bill Peckham"],
+	["../early_years/OSU-50_2062.jpg", "First A.G.C Student Chapter in America"],
+	["../early_years/OSU-50_2178.jpg", "Oregon State's A.G.C Student Chapter receives their charter during the 1969-70 academic year. A.G.C of American President, Ray Rogers, presents the documents to Tom Mossman, Student Chapter President."],
+	["../early_years/OSU-50_2180.jpg", "A.G.C. Student Chapter looking at first class composite photo in 1969"]
+	
+	
+);

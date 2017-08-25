@@ -37,6 +37,7 @@ body{
     position:fixed;
     bottom:120px;
     width:1900px; 
+	z-index: 1;
 
 }
 #menuItemsArea {
@@ -94,11 +95,13 @@ body{
 
 .hidden{
 	visibility: hidden;
+	left: 2000px;
 }
 
-iframe {
-	z-index: 100;
+#frmContent {
+	z-index: 1000;
 }
+
 
 
 

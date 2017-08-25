@@ -13,8 +13,8 @@ case "videos":
 default:
 	menuItems[menuItems.length]=new menuItem("CEM Composites", "MenuItems/cem1969.png", "showPage('StaticHTML/cemcomp.html', '1080');");
 	menuItems[menuItems.length]=new menuItem("CE Composites", 'MenuItems/1954.jpg', "showPage('StaticHTML/cecomp.html', '1080');");
-	//menuItems[menuItems.length]=new menuItem("Campus Map", "map.png", "showPage('http://oregonstate.edu/campusmap/index/embed?zoom=18&centerlat=44.567000&centerlng=-123.275480&layers=1,206', '980');");
-	menuItems[menuItems.length]=new menuItem("Campus Map", "MenuItems/map.png", "showPage('MenuItmes/staticMap.PNG', '980');");
+	//menuItems[menuItems.length]=new menuItem("Campus Map", "MenuItems/map.png", "showPage('http://oregonstate.edu/campusmap/index/embed?zoom=18&centerlat=44.567000&centerlng=-123.275480&layers=1,206', '980');");
+	menuItems[menuItems.length]=new menuItem("Campus Map", "MenuItems/map.png", "showPage('StaticHTML/map.html', '1080');");
 	menuItems[menuItems.length]=new menuItem("CEM Program Formation", "MenuItems/cemearly.png", "showPage('StaticHTML/cemearly.html', '1080');");
 	menuItems[menuItems.length]=new menuItem("CEM in the 70's", "MenuItems/70s.png", "showPage('StaticHTML/70s.html', '1080');");
 	menuItems[menuItems.length]=new menuItem("CEM in the 80's", "MenuItems/80s.png", "showPage('StaticHTML/80s.html', '1080');");
@@ -59,7 +59,7 @@ function queryObj() {
 }
 
 function showPage(strURL, strHeight){
-	document.getElementById('menuItemsArea').classList.add('hidden');
+	document.getElementById('canvas').classList.add('hidden');
 	document.getElementById('label').classList.add('hidden');
 	document.getElementById('frmContent').src="";
 	document.getElementById('frmContent').classList.remove('hidden');
