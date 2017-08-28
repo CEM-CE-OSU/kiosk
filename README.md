@@ -8,10 +8,14 @@ OSU campus. Ideally this map would be interactive and allow people to look for t
 but currently it is static.
 
 ## TODO
---Refactor JS code out of HTML files
---Refactor Placement of PHOTOS along with removing redundent photos
---Refactor CSS out of HTML Files.
---Add in New Photos.
---See if we can do an interactive map.
---May consider new features.
+*Refactor JS code out of HTML files x
+*Refactor Placement of PHOTOS along with removing redundent photos x
+*Refactor CSS out of HTML Files. x
+*Add in New Photos. x
+
+##New Features
+*Create new sub menu system for CE and CEM
+*Add new photos and create new sum menu for CE
+*Create New Master menu with Map CE and CEM as menu items.
+
 
