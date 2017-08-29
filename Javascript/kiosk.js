@@ -22,6 +22,7 @@ case "CEM":
 //TODO: Add more catigories and menu items.
 case "CE":
 	menuItems[menuItems.length]=new menuItem("CE Composites", 'MenuItems/1954.jpg', "showPage('StaticHTML/cecomp.html', '1080');");
+	menuItems[menuItems.length]=new menuItem("CE Today", "MenuItems/cetoday.jpg", "showPage('StaticHTML/cetoday.html', '1080');");
 	blnSubMenu = true;
 	break;
 	
