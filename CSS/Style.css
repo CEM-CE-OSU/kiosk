@@ -52,8 +52,8 @@ body{
 
 .left { 
 	margin: 20px; 
-	float:left; 
 	text-align:center;
+	display: inline-block;
 }
 
 #divNav{

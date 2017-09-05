@@ -1,0 +1,34 @@
+#!/bin/bash
+#Author: Thomas Noelcke
+#This script takes one paramater as an argument. It takes a file name
+#in the parent directory that represents a directory name with photos in it.
+#it will then take and loop through all the photos and create a JS script that
+#will preload all the photos in that directory.
+
+#check that a paramater has been entered.
+if [ $# -eq 0 ]
+then
+	echo "You must provide one argument that is the directory of the file you would like to preload"
+	exit 1
+fi
+#get the directory name and ensure that it exits
+dir=$1
+cd ..
+
+if [ ! -d $dir ]
+then
+	echo "That Directory Does Not Exists"
+	exit 1
+fi
+fname="Javascript/preloading"
+fname="$fname$dir.js"
+echo "preloading(" > $fname
+
+#loop through all the files so you can add them to the script file.
+for entry in "$dir"/*
+do
+	echo -n "[\"../" >> $fname
+	echo -n $entry >> $fname 
+	echo "\" , \"\"]," >> $fname
+done
+echo ");" >> $fname
